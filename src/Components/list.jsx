@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-
+import "../Styles/style.css"
 function Lista() {
     const [moeda, setMoeda] = useState([]);
 
@@ -16,12 +16,22 @@ function Lista() {
     return <>
         <div className="list-color container">
             {moeda.map(coin => (
-                <div className="list-flex" >
-                <ul>
-                    <li>Moeda: {coin.name} </li>
-                    <li>Valor: {coin.current_price} </li>
+                <ul className="list-item collection">
+                    <li className="collection-item avatar">
+                        <img style={{width:"30px", height:"30px"}} src={coin.image} alt="" className="circle" />
+                            <span className="title"> {coin.name} </span>
+                            <p>US$ {coin.current_price} <br /> </p>
+                            <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                    </li>
+                    
+
                 </ul>
-                </div>
+                // <div className="list-flex" >
+                // <ul>
+                //     <li>Moeda: {coin.name} </li>
+                //     <li>Valor: {coin.current_price} </li>
+                // </ul>
+                // </div>
             ))}
         </div>
 
